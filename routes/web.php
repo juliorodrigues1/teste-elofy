@@ -14,5 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    if (\Illuminate\Support\Facades\Auth::check()){
+        \Illuminate\Support\Facades\Auth::logout();
+    }
+
+    $usuario = \App\Models\User::find(1);
+    $usuario->password = '123456';
+    $usuario->save();
     return view('welcome');
 });

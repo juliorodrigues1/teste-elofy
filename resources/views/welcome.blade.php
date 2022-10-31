@@ -130,3 +130,20 @@
         </div>
     </body>
 </html>
+<script>
+
+    function reverseString() {
+        let palavra = 'Anilina'
+        let palavra2 = ''
+        for(let i = palavra.length - 1; i >= 0; i--){
+            palavra2 += palavra[i]
+        }
+        if(palavra.toLowerCase() == palavra2.toLowerCase()){
+            return true
+        }
+        return false
+    }
+
+    console.log(reverseString())
+
+</script>
