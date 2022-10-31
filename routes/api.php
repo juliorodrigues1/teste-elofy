@@ -16,4 +16,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+
 });
+Route::post('logout', function (){
+    auth()->user()->tokens()->delete();
+    return response()->json(['message' => 'Logout realizado com sucesso'], 200);
+});
+Route::post('/login', [\App\Http\Controllers\UsuarioController::class, 'login']);
